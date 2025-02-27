@@ -123,15 +123,19 @@
           <a href="mailto:pchanpanichravee@ucsd.edu">pchanpanichravee@ucsd.edu</a>
         </p>
       </address>
+
       <form action="#" method="post">
         <fieldset>
           <legend>Send Me a Message</legend>
           <label for="contact-name">Name:</label>
           <input type="text" id="contact-name" name="contact-name" required />
+
           <label for="contact-email">Email:</label>
           <input type="email" id="contact-email" name="contact-email" required />
+
           <label for="contact-message">Message:</label>
           <textarea id="contact-message" name="contact-message" rows="4" required></textarea>
+          
           <button type="submit">Submit</button>
         </fieldset>
       </form>
@@ -139,7 +143,33 @@
         <li><a href="https://github.com/PussakornCH" target="_blank">GitHub</a></li>
         <li><a href="www.linkedin.com/in/pussakorn-chanpanichravee-13295129b" target="_blank">LinkedIn</a></li>
       </ul>
+
+      <form action="https://httpbin.org/post" method="POST">
+        <fieldset> 
+          <legend>Introduce Yourself</legend>
+  
+          <label for="intro-name">Name:</label>
+          <input type="text" id="intro-name" name="name" required>
+      
+          <label for="intro-email">Email:</label>
+          <input type="email" id="intro-email" name="email" required>
+      
+          <label for="intro-message">Comments:</label>
+          <textarea id="intro-message" name="comments" rows="4" required></textarea>
+      
+          <input type="hidden" name="possible_bot" value="true">
+      
+          <!-- We'll use these for messages in Parts 2 and 3 -->
+          <output id="error-message"></output>
+          <output id="info-message"></output>
+      
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
     </section>
+
+
+    
 
     <!-- Footer -->
     <footer>
