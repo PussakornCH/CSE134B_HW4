@@ -150,7 +150,8 @@
           <legend>Introduce Yourself</legend>
   
           <label for="intro-name">Name:</label>
-          <input type="text" id="intro-name" name="name" minlength="1" maxlength="50" required>
+          <input type="text" id="intro-name" name="name" 
+              minlength="1" maxlength="50" required>
           <span></span>
       
           <label for="intro-email">Email:</label>
@@ -158,14 +159,18 @@
           <span></span>
       
           <label for="intro-message">Comments:</label>
-          <textarea id="intro-message" name="comments" rows="4" minlength="10" maxlength="250" required></textarea>
+          <textarea id="intro-message" name="comments" 
+              rows="4" minlength="10" maxlength="250" required></textarea>
           <span></span>
       
           <input type="hidden" name="possible_bot" value="true">
-      
-          <!-- We'll use these for messages in Parts 2 and 3 -->
-          <output id="error-message"></output>
+
+          <!-- Area for showing the message -->
           <output id="info-message"></output>
+          <output id="error-message"></output>
+
+          <!-- Hidden field to store error logs -->
+          <input type="hidden" name="form-errors" id="form-errors" value="">
       
           <button type="submit">Submit</button>
         </fieldset>
@@ -173,6 +178,7 @@
     </section>
 
 
+    <script src="JS/main.js"></script>
     
 
     <!-- Footer -->
