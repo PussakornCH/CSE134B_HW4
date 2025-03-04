@@ -5,6 +5,10 @@
   --accent-color: #007acc;
   --font-family-custom: 'Roboto', Arial, sans-serif;
   --nav-hover-scale: 1.1;
+
+  /* --- background and text color --- */
+  --background-color: #ffffff;
+  --text-color: #000000;
 }
 
 /* --- Basic Reset and Typography --- */
@@ -18,6 +22,20 @@ body {
   line-height: 1.6;
   padding: 1rem;
 }
+
+/* --- body and text for dark theme --- */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body.dark {
+  --background-color: #2e2e2e; /* Dark background */
+  --text-color: #f1f1f1;       /* Light text */
+  --main-bg-color: #1a1a1a; /* Darker header/footer background */
+  --accent-color: #66aaff;  /* update accent color for dark mode */
+}
+
 
 /* --- Header with Flexbox Layout --- */
 header {
@@ -48,7 +66,7 @@ nav li {
 }
 nav a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
   transition: transform 0.3s ease-in-out;
 }
 nav a:hover {
@@ -257,6 +275,16 @@ portfolio-highlight {
 }
 portfolio-highlight:hover {
   background-color: #e9ffe9;
+}
+
+/* --- toggle button for dark theme --- */
+#theme-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 /* --- Media Queries for Responsive Design --- */

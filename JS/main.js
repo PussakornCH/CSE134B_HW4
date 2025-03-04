@@ -1,3 +1,5 @@
+// HW4 Part 3 JavaScript Based Validation, Masking, and Length Reporting
+
 // Setups
 const form = document.querySelector('#contact form[action="https://httpbin.org/post"]'); 
 const nameInput = document.getElementById("intro-name");
@@ -132,4 +134,36 @@ form.addEventListener("submit", function(event) {
 
     // Submit the form for real
     form.submit();
+});
+
+
+// HW4 Part 4: Dark & Light Theme Switcher 
+// Select the toggle button
+const themeToggle = document.getElementById("theme-toggle");
+
+// Right after selecting the toggle button, make it visible:
+themeToggle.style.display = "block";
+
+// Check localStorage for the saved theme, default to 'light'
+const currentTheme = localStorage.getItem("theme") || "light";
+
+// Apply the saved theme on page load
+if (currentTheme === "dark") {
+  document.body.classList.add("dark");
+  themeToggle.textContent = "☀️ Light Mode"; // Button now shows option to switch to light mode
+} else {
+  // Light mode is default, no extra class needed
+  themeToggle.textContent = "🌙 Dark Mode";
+}
+
+// Listen for a click on the toggle button
+themeToggle.addEventListener("click", () => {
+  // Toggle the "dark" class on the body
+  const isDark = document.body.classList.toggle("dark");
+  
+  // Save the current theme in localStorage
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+  
+  // Update the button text to reflect the new state
+  themeToggle.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
 });
